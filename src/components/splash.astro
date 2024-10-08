@@ -5,6 +5,7 @@ import astronautImage from "~/assets/astronaut.png";
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
 import GitHubCorner from "./github-corner.astro";
+import bannerInformation from "~/content/generalDataInformation";
 
 const widths = [450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
@@ -12,7 +13,7 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
 
 <section class="relative h-full bg-black">
   <Starfield />
-  <GitHubCorner />
+  <!-- <GitHubCorner /> -->
   <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-40">
     <HeroImage />
   </div>
@@ -24,10 +25,22 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
       <div
         class="gradient-text text-center font-extrabold tracking-tighter text-6xl md:text-8xl"
       >
-        Build fast
+        <!-- Build fast
         <br /> websites,
-        <br /> faster.
+        <br /> faster. -->
+        {bannerInformation.tittle}
       </div>
+      <br /> {bannerInformation.tecnique}
+      <br /> {bannerInformation.ask}
+      <br /> {bannerInformation.description}
+
+      <!-- show the list in bannerInformation.list -->
+      <ul class="text-white">
+        {bannerInformation.list.map((item) => (
+          <li>✅ {item}</li>
+        ))}
+      </ul>
+
     </h2>
     <div
       id="astronaut"
