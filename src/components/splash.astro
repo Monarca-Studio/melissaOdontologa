@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 // import { Icon } from "astro-icon/components";
 // import astronautImage from "~/assets/astronaut.png";
-import logo_MO from "~/assets/logo_mo.png";
 import melissaImage from "~/assets/melissa_3.png";
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
@@ -15,48 +14,46 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
 
 <section class="relative h-full bg-gray-900 text-white">
   <Starfield />
-  <div class="relative grid h-full place-items-center sm:grid-cols-2 gap-6 px-4 py-8 sm:py-0 mx-5">
-    <!-- <div class="flex flex-col md:items-center md:text-center md:space-y-4 sm:space-y-6 sm:text-left sm:items-start"> -->
-    <div class="flex flex-col space-y-4">    
-      <div class="flex flex-col items-center text-center">
-        <Image class="w-20 sm:w-24 mx-auto" src={logo_MO} alt="Melissa Odontologa" />
-        <h2 class="text-lg sm:text-xl font-semibold text-yellow-400">
+  <div class="relative grid h-full place-items-center sm:grid-cols-2 gap-6 px-4 py-8 sm:py-2 mx-5">
+    <div class="flex flex-col space-y-10 ">    
+      <div class="flex flex-col items-center text-center ">
+        <Image class="w-20 md:w-20 mx-auto my-2 " src={melissaImage} alt="Melissa Odontologa" />
+        <h2 class="text-lg sm:text-xl font-medium my-2 ">
           {bannerInformation.tittle}
         </h2>
-        <h3 class="text-2xl sm:text-3xl font-bold text-yellow-500">
+        <h3 class="text-2xl sm:text-3xl font-bold text-yellow-500 ">
           {bannerInformation.tecnique}
         </h3>
       </div>
 
-      <div class="md:items-center md:text-center md:space-y-4 sm:space-y-6 sm:text-left sm:items-start">
-        <p class="text-sm sm:text-base font-normal">
+      <div class="text-justify font-light md:items-center md:text-center space-y-4 sm:text-left sm:items-start">
+        <p class="text-sm sm:text-base ">
           {bannerInformation.ask}
         </p>
-        <br />
-        <p class="text-sm sm:text-base font-light">
-          {bannerInformation.description}
+        <p class="text-sm sm:text-base ">
+          En este curso online, te enseñaré paso a paso cómo construir <span class="font-bold text-yellow-500">carillas en resina indirecta.</span> Un protocolo predecible y replicable.
         </p>
       </div>
 
-      <ul class="text-sm sm:text-base font-normal mt-2">
+      <ul class="text-sm sm:text-base font-light my-4 mx-5">
         {bannerInformation.list.map((item) => (
-          <li class="flex">
-            <span class="text-green-500">✅</span>
+          <li class="flex align-middle text-justify">
+            <span class="text-green-500 pr-4">✅ </span>
             {item}
           </li>
         ))}
       </ul>
 
-      <div class="items-center text-center">
-        <a href={bannerInformation.buttonLink} target="_blank" class="mt-4 px-6 py-2 bg-yellow-400 text-black font-semibold rounded-md hover:bg-yellow-500 transition-colors">
+      <div class="items-center text-center  my-10">
+        <a href={bannerInformation.buttonLink} target="_blank" class="mt-4 px-6 py-4 bg-yellow-400 text-black font-semibold rounded-md hover:bg-yellow-500 transition-colors">
           {bannerInformation.buttonLabel}
         </a>
       </div>
     </div>
 
-    <div class="w-2/3 max-w-3xl sm:w-10/12">
+    <!-- <div class="w-2/3 max-w-3xl sm:w-10/12">
       <Image class="h-full w-full object-cover rounded-md shadow-lg" src={melissaImage} widths={widths} sizes={sizes} loading="eager" alt="A floating astronaut in a space suit" />
-    </div>
+    </div> -->
   </div>
 </section>
 

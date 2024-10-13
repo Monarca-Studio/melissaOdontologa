@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
+import LogoMO from "~/assets/logo_mo.png";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
 
@@ -16,7 +18,8 @@ const navItems: Array<NavItem> = [
 >
   <a class="flex items-center gap-3 hover:!text-default" href="#">
     <h1 class="sr-only">Astro</h1>
-    <Icon name="logomark" class="size-10" />
+    <Image class="w-10" src={LogoMO} alt="Melissa Odontologa" />
+    <!-- <Icon name="logomark" class="size-10" /> -->
     <Icon name="wordmark" class="hidden h-4 sm:block" />
   </a>
   <div>

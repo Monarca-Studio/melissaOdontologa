@@ -2,7 +2,6 @@ const bannerInformation = {
   tittle: 'Carillas Indirectas',
   tecnique: 'Técnica MO',
   ask: '¿Te gustaría dominar una técnica que te permita ofrecer resultados predecibles y estéticos a tus pacientes?',
-  description: 'En este curso online, te enseñaré paso a paso cómo construir carillas en resina indirecta. Un protocolo predecible y replicable.',
   list: [
     'Crea carillas con una estética natural.',
     'Evita errores comunes en la técnica. Evita errores comunes en la técnica.',
