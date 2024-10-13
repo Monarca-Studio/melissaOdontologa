@@ -17,7 +17,10 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
   <div class="relative grid h-full place-items-center sm:grid-cols-2 gap-6 px-4 py-8 sm:py-2 mx-5">
     <div class="flex flex-col space-y-10 ">    
       <div class="flex flex-col items-center text-center ">
-        <Image class="w-20 md:w-20 mx-auto my-2 " src={melissaImage} alt="Melissa Odontologa" />
+        <!-- smaller than medium screen size show the image -->
+        <div class="sm:hidden">
+          <Image class="w-20 md:w-20 mx-auto my-2 " src={melissaImage} alt="Melissa Odontologa" />
+        </div>
         <h2 class="text-lg sm:text-xl font-medium my-2 ">
           {bannerInformation.tittle}
         </h2>
@@ -51,9 +54,10 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
       </div>
     </div>
 
-    <!-- <div class="w-2/3 max-w-3xl sm:w-10/12">
+    <!-- bigger than medium screen size show the image -->
+    <div class="hidden sm:flex sm:items-center sm:justify-center">
       <Image class="h-full w-full object-cover rounded-md shadow-lg" src={melissaImage} widths={widths} sizes={sizes} loading="eager" alt="A floating astronaut in a space suit" />
-    </div> -->
+    </div>
   </div>
 </section>
 
