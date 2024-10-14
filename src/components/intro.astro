@@ -1,11 +1,35 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import logo_mo from "~/assets/logo_mo.png";
+import melissa2 from "~/assets/melissa_2.jpeg";
+import oscar1 from "~/assets/oscar_1.jpeg";
 import ContentSection from "~/components/content-section.astro";
 ---
 
-<ContentSection title="Just ship less" id="intro">
-  <Icon slot="eyebrow" name="logomark" class="size-32" />
-  <Fragment slot="lead">
+<ContentSection title="" id="intro">
+  <!-- <Icon slot="eyebrow" name="logomark" class="size-32" /> -->
+  <Image slot="eyebrow" class="w-10 m-0" src={logo_mo} alt="Melissa Odontologa" />
+
+  <!-- show melissa2 y oscar1 images in a profesional grid -->
+  <div class="grid grid-cols-2 gap-1 sm:grid-cols-2 mb-5">
+    <Image class="h-full w-full object-cover rounded-md shadow-lg" src={melissa2} alt="Melissa Odontologa" />
+    <Image class="h-full w-full object-cover rounded-md shadow-lg" src={oscar1} alt="Oscar" />
+  </div>
+
+  <div class="text-sm text-justify my-5 space-y-4">
+    <p>
+      Pero créeme, esa situación cambiará a partir de ahora.
+    </p>
+    <p>
+      Por eso, he desarrollado un entrenamiento completo enfocado en carillas de resina indirectas, creemos firmemente que es la técnica más simple, cómoda y segura para lograr resultados de excelencia. 
+    </p>
+    <p>
+      Este curso no solo te enseñará la técnica; es una guía completa para alcanzar resultados precisos y naturales para tus pacientes, optimizar tu productividad clínica y convertirte en un profesional muy solicitado en tu área.
+    </p>
+  </div>
+  
+  <!-- <Fragment slot="lead">
     Astro is a new kind of site builder for the
     <span class="text-primary">modern</span> web.
     <span class="text-primary">Lightning-fast</span>
@@ -26,5 +50,5 @@ import ContentSection from "~/components/content-section.astro";
       <Icon name="mdi:rocket" class="size-8" />
       <span>Try it out</span>
     </a>
-  </div>
+  </div> -->
 </ContentSection>
