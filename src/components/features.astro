@@ -5,62 +5,82 @@ import type { FeatureItem } from "~/types";
 
 const features: Array<FeatureItem> = [
   {
-    title: "Bring Your Own Framework",
+    title: "Confianza y seguridad",
     description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-    icon: "mdi:handshake",
+      "Tener confianza y seguridad para trabajar con carillas de resina indirecta",
+    icon: "mdi:tooth-outline",
   },
   {
-    title: "100% Static HTML, No JS",
+    title: "Dominar la técnica",
     description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "mdi:feather",
+      "Dominar la técnica para construir carillas naturales y de calidad superior.",
+    icon: "mdi:tooth-outline",
   },
   {
-    title: "On-Demand Components",
+    title: "Destacar en su entorno laboral",
     description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page. If the user never sees it, they never load it.",
-    icon: "mdi:directions-fork",
+      "Destacar en su entorno laboral con una base de pacientes felices que recomienden su trabajo.  ",
+    icon: "mdi:tooth-outline",
   },
   {
-    title: "Broad Integration",
+    title: "Ofrecer una mejor odontología",
     description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any of your favorite npm packages.",
-    icon: "mdi:graph",
+      "Ofrecer una mejor odontología estética y restauradora , mantenimiento el compromiso con la salud de los pacientes.",
+    icon: "mdi:tooth-outline",
   },
   {
-    title: "SEO Enabled",
+    title: "Abrir su propia clínica",
     description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication.",
-    icon: "mdi:search-web",
+      "Dar el primer paso para abrir su propia clínica especializada en estética dental.",
+    icon: "mdi:tooth-outline",
   },
   {
-    title: "Community",
+    title: "Trabajar de forma inteligente",
     description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-    icon: "mdi:account-group",
+      "Trabajar de forma inteligente, logrando metas financieras a través  de las carillas de resina indirecta ",
+    icon: "mdi:tooth-outline",
   },
 ];
 ---
 
-<ContentSection title="Features" id="features">
-  <Fragment slot="lead">
-    Astro comes <span class="text-primary">batteries included</span>. It takes
-    the best parts of
-    <span class="text-primary">state-of-the-art</span>
-    tools and adds its own <span class="text-primary">innovations</span>.
-  </Fragment>
-  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+<ContentSection title="" id="features">
+  <h1 class="text-navy text-center font-extrabold tracking-tight text-4xl">
+    Carillas indirectas:
+  </h1>
+  <br>
+  <h2 class="text-navy text-center font-extrabold text-2xl">
+    Técnica MO <span class="text-gold"> es para quien desea...</span>
+  </h2>
+  <ul class="grid max-w-6xl gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-10">
     {
       features.map(({ title, description, icon }) => (
         <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
           <div class="size-16 rounded-full border-2 border-current p-3">
             <Icon name={icon} class="size-full" />
           </div>
-          <p class="text-center font-extrabold text-xl">{title}</p>
+          {/* <p class="text-center font-extrabold text-xl">{title}</p> */}
           <p class="text-center text-offset text-sm">{description}</p>
         </li>
       ))
     }
   </ul>
+  <a href="https://melissaodontologa.com/curso-carillas-resina-indirectas/" target="_blank" class="mt-4 px-6 py-4 bg-amber-300 text-white font-semibold rounded-md hover:bg-yellow-500 hover:text-white transition-colors">
+    Quiero esto para mi
+  </a>
+  <p class="text-xs bg-black text-white mt-2 py-1 px-1">
+    acceso inmediato, completo y seguro
+  </p>
+
+  <!-- create container to display or render a video -->
+  <div class="grid grid-cols-1 gap-4 my-10">
+    <iframe
+      width="250"
+      height="150"
+      src="https://res.cloudinary.com/dbyp3pr3d/video/upload/v1729030500/video_editado_landing_page_frhxn6.mp4"
+      title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+
 </ContentSection>

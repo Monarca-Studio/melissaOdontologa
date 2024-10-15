@@ -7,6 +7,7 @@
   --color-background-offset: theme("colors.gray.100");
   --color-border: theme("colors.gray.900" / 10%);
   --color-gold: #c09c54;
+  --color-navy: #202434;
 }
 
 [data-theme="dark"] {
@@ -18,4 +19,5 @@
   --color-background-offset: theme("colors.gray.800");
   --color-border: theme("colors.gray.50" / 10%);
   --color-gold: #c09c54;
+  --color-navy: #202434;
 }
