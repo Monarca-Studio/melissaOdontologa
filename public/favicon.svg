@@ -3,7 +3,7 @@
     #letter-a {
       fill: black;
     }
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: light) {
       #letter-a {
         fill: white;
       }

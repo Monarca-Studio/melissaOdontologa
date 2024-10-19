@@ -24,10 +24,11 @@ import { Icon } from "astro-icon/components";
 <script>
   import invariant from "tiny-invariant";
 
-  const themes = ["light", "dark"];
+  const themes = ["light", "light"];
   const button = document.querySelector("#theme-switcher");
   invariant(button, "button should not be null");
 
+  // set light theme as default
   const getThemeCurrent = () => document.documentElement.dataset.theme;
   const getThemeNext = () => {
     const themeCurrent = getThemeCurrent();
@@ -48,6 +49,7 @@ import { Icon } from "astro-icon/components";
   };
 
   button.addEventListener("click", () => {
+    console.log("change theme")
     const themeNext = getThemeNext();
     document.documentElement.dataset.theme = themeNext;
     localStorage.setItem("theme", themeNext);
