@@ -4,7 +4,7 @@ const bannerInformation = {
   ask: '¿Te gustaría dominar una técnica que te permita ofrecer resultados predecibles y estéticos a tus pacientes?',
   list: [
     'Crea carillas con una estética natural.',
-    'Evita errores comunes en la técnica. Evita errores comunes en la técnica.',
+    'Evita errores comunes en la técnica.',
     'Trabajar inteligente, ganando más y dando mayor valor a tus pacientes.',
   ],
   buttonLabel: 'Quiero mi cupo',
