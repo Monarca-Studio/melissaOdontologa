@@ -11,6 +11,7 @@ module.exports = {
         primary: "var(--color-primary)",
         secondary: "var(--color-secondary)",
         gold: "var(--color-gold)",
+        goldDark: "var(--color-gold-dark)",
         navy: "var(--color-navy)",
       },
       textColor: {
