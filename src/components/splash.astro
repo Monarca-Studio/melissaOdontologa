@@ -3,10 +3,12 @@ import { Image } from "astro:assets";
 // import { Icon } from "astro-icon/components";
 // import astronautImage from "~/assets/astronaut.png";
 import melissaImage from "~/assets/melissa_3.png";
+import logoMo from "~/assets/logo_mo.png";
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
 import GitHubCorner from "./github-corner.astro";
 import bannerInformation from "~/content/generalDataInformation";
+import Button from "~/components/button.astro";
 
 const widths = [450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
@@ -15,64 +17,62 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
 <section class="relative bg-gray-900 text-white pb-10">
   <Starfield />
 
-  <!-- Image Grid Section at the Top -->
-  <div class="relative grid grid-cols-2 sm:grid-cols-3 gap-4 px-4 pt-8 mx-auto max-w-screen-lg">
-    <!-- Image 1 -->
-    <div>
-      <Image class="h-full w-full object-cover rounded-md shadow-lg" src={melissaImage} alt="Image 1" />
-    </div>
-    <!-- Image 2 -->
-    <div>
-      <Image class="h-full w-full object-cover rounded-md shadow-lg" src={melissaImage} alt="Image 2" />
-    </div>
-    <!-- Image 3 (optional based on grid, repeat this block for more images) -->
-    <div class="hidden sm:block">
-      <Image class="h-full w-full object-cover rounded-md shadow-lg" src={melissaImage} alt="Image 3" />
-    </div>
-  </div>
-
-  <!-- Course Information Section Below the Images -->
-  <div class="relative grid place-items-center sm:grid-cols-2 px-4 pt-8 sm:pt-2 mx-5">
-    <div class="flex flex-col space-y-10">    
-      <div class="flex flex-col items-center text-center">
-        <h2 class="text-lg sm:text-xl font-medium my-2">
+  <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8"> -->
+    <div class="relative min-h-[80vh] bg-blue-600 grid place-items-center px-4 py-12 sm:pt-2 grid-cols-1 md:grid-cols-[40%,60%] gap-6 mx-5 md:mx-20">
+      <!-- Left Section: Text and Call to Action (40% on Desktop) -->
+      <div class="text-center md:text-left md:justify-center">
+        <Image class="w-10 h-15 mx-auto" src={logoMo} alt="Instructor" />
+        <h2 class="text-lg sm:text-xl font-medium mt-10">
           {bannerInformation.tittle}
         </h2>
         <h3 class="text-2xl sm:text-3xl font-bold text-gold">
           {bannerInformation.tecnique}
         </h3>
-      </div>
-
-      <div class="text-justify font-light md:items-center md:text-center space-y-4 sm:text-left sm:items-start">
-        <p class="text-sm sm:text-base">
-          {bannerInformation.ask}
-        </p>
-        <p class="text-sm sm:text-base">
+        <p class="text-base my-10">
           En este curso online, te enseñaré paso a paso cómo construir <span class="font-bold text-gold">carillas en resina indirecta.</span> Un protocolo predecible y replicable.
         </p>
+        <!-- CTA Button -->
+        <div class="">
+          <a href="https://melissaodontologa.com/curso-carillas-resina-indirectas/" class="w-full block mb-10 px-10 py-5 bg-gold text-white font-semibold rounded-md hover:bg-yellow-600 hover:text-white transition-colors align-center text-center">
+            ¡Quiero mi cupo!
+          </a>
+        </div>
       </div>
-
-      <ul class="text-sm sm:text-base font-light my-4 mx-5">
-        {bannerInformation.list.map((item) => (
-          <li class="flex align-middle text-justify">
-            <span class="text-green-500 pr-4">✅</span>
-            {item}
-          </li>
-        ))}
-      </ul>
-
-      <div class="items-center text-center my-10">
-        <a href={bannerInformation.buttonLink} target="_blank" class="mt-4 px-6 py-4 bg-amber-300 text-white font-semibold rounded-md hover:bg-yellow-500 hover:text-white transition-colors">
-          {bannerInformation.buttonLabel}
-        </a>
-        <p class="mt-4 text-light text-extralight">acceso inmediato</p>
+    
+      <!-- Right Section: Video Embed (60% on Desktop) -->
+      <div class="grid grid-cols-1 gap-4 justify-center md:ml-20">
+        <video 
+          class="w-full h-auto rounded-lg shadow-lg" 
+          controls
+          preload="auto"
+        >
+          <source src="https://res.cloudinary.com/dbyp3pr3d/video/upload/v1729030500/video_editado_landing_page_frhxn6.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
+    
+    <!-- Ajuste del espacio entre la sección de video y los beneficios -->
+    <div class="relative bg-red-500 grid place-items-center px-4 pt-6 pb-8 sm:pt-2 sm:pb-6 mx-5 grid-cols-1 md:grid-cols-3 gap-4 mb-8 mt-10 md:-mt-20">
+      {bannerInformation.list.map((item) => (
+        <div class="flex flex-col items-center bg-white border rounded py-6">
+          <span class="text-green-500 pr-4">✅</span>
+          <p class="text-sm text-black">{item}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Course Instructor -->
+    <!-- <div class="text-center mb-10">
+      <Image class="w-32 h-32 mx-auto rounded-full shadow-md" src={melissaImage} alt="Instructor" />
+      <h2 class="text-2xl font-bold mt-4">Melissa Odontóloga</h2>
+      <p class="text-sm text-gray-300">Más de 10 años de experiencia enseñando técnicas avanzadas de odontología.</p>
+    </div> -->
 
     <!-- Larger image on the right side for bigger screens -->
-    <div class="hidden sm:flex sm:items-center sm:justify-center">
+    <!-- <div class="hidden sm:flex sm:items-center sm:justify-center">
       <Image class="h-full w-full object-cover rounded-md shadow-lg" src={melissaImage} widths={widths} sizes={sizes} loading="eager" alt="Melissa Odontologa" />
-    </div>
+    </div> -->
   </div>
 
   <!-- Arrow Button positioned between sections -->
@@ -102,6 +102,14 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
       He notado que esto sucede a menudo cuando el profesional comienza su práctica con la técnica directa. Aunque no está mal, este enfoque es menos eficiente para quienes buscan seguridad y excelencia en este campo.
     </p>
   </div>
+
+  <!-- Final CTA -->
+    <div class="text-center mt-12">
+      <a href={bannerInformation.buttonLink} target="_blank" class="bg-gold text-black font-semibold px-6 py-4 rounded-lg hover:bg-yellow-500 transition">
+        Inscríbete Ahora
+      </a>
+    </div>
+
 </section>
 
 <noscript>

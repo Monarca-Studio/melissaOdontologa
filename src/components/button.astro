@@ -1,0 +1,52 @@
+---
+import ContentSection from "./content-section.astro"
+
+const { label, size, url, bg } = Astro.props;
+---
+
+<!-- Create button componenent that receives a href, text, size as prompt -->
+<ContentSection title="" id="button">
+  <a href={
+    url
+  } class={
+    `${size ? `button--${size}` : ""} bg-gold text-white font-semibold rounded-md hover:bg-yellow-600 hover:text-white transition-colors`
+  }>
+    {label}
+  </a>
+</ContentSection>
+
+<style>
+  /* .button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+  } */
+
+  .button--primary {
+    background-color: #2563EB;
+    color: white;
+  }
+
+  .button--secondary {
+    background-color: #F87171;
+    color: white;
+  }
+
+  .button--large {
+    font-size: 1.25rem;
+    padding: 1rem 10rem;
+  }
+
+  .button--small {
+    font-size: 0.75rem;
+    padding: 1rem 5rem;
+  }
+</style>
+
+
+
+
