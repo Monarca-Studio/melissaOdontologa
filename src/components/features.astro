@@ -2,6 +2,7 @@
 import { Icon } from "astro-icon/components";
 import ContentSection from "~/components/content-section.astro";
 import type { FeatureItem } from "~/types";
+import { bannerInformation } from "~/content/generalDataInformation";
 
 const features: Array<FeatureItem> = [
   {
@@ -64,7 +65,7 @@ const features: Array<FeatureItem> = [
       ))
     }
   </ul>
-  <a href="https://melissaodontologa.com/curso-carillas-resina-indirectas/" class="block mb-2 px-10 py-5 bg-gold text-white font-semibold rounded-md hover:bg-goldDark hover:text-white transition-colors align-center text-center">
+  <a href={bannerInformation.buttonLink} class="block mb-2 px-10 py-5 bg-gold text-white font-semibold rounded-md hover:bg-goldDark hover:text-white transition-colors align-center text-center">
     Haz clic aquí para acceder al curso
   </a>
   <p class="text-xs bg-black text-white mt-2 py-1 px-1">

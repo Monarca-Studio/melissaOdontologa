@@ -7,7 +7,7 @@ import logoMo from "~/assets/logo_mo.png";
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
 import GitHubCorner from "./github-corner.astro";
-import bannerInformation from "~/content/generalDataInformation";
+import { bannerInformation, carrouselImages, cardsImages } from "~/content/generalDataInformation";
 import Button from "~/components/button.astro";
 
 const widths = [450, 800];
@@ -33,7 +33,7 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
       </p>
       <!-- CTA Button -->
       <div class="relative">
-        <a href="https://melissaodontologa.com/curso-carillas-resina-indirectas/"
+        <a href={bannerInformation.buttonLink} target="_blank"
            class="w-full block mb-10 px-10 py-5 bg-gold text-white font-semibold rounded-md hover:bg-goldDark hover:text-white transition-colors transform hover:scale-105 relative overflow-hidden z-10 shadow-md hover:shadow-lg flex items-center justify-center"
         >
           ¡Quiero mi cupo!
@@ -52,6 +52,53 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
         Your browser does not support the video tag.
       </video>
     </div>
+  </div>
+
+  <!-- Horizontal Carousel with Arrows and Auto-scroll -->
+  <div class="relative mx-5 md:mx-20 mt-12 overflow-hidden">
+    <!-- Left Arrow -->
+    <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gold text-white p-2 rounded-full z-10 hover:bg-yellow-500 transition" id="prev">
+      &#10094;
+    </button>
+
+    <!-- Carousel Items -->
+    <div class="flex space-x-4 transition-transform duration-700 ease-out" id="carousel-container">
+      <!-- <div class="relative group flex-shrink-0 w-[300px]">
+        <Image class="w-full h-full object-cover rounded-md shadow-lg transform scale-100 group-hover:scale-105 transition-transform duration-500" 
+          src={} alt="Smile Design 1" />
+      </div> -->
+      <!-- Add more images as needed -->
+      {
+        carrouselImages.map((item) => (
+          <div class="relative group flex-shrink-0 w-[300px]">
+            <Image class="w-full h-full object-cover rounded-md shadow-lg transform scale-100 group-hover:scale-105 transition-transform duration-500" 
+              src={item.image} alt={item.alt} />
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Right Arrow -->
+    <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gold text-white p-2 rounded-full z-10 hover:bg-yellow-500 transition" id="next">
+      &#10095;
+    </button>
+  </div>
+
+  <!-- Gallery for Smile Design Images (Desktop Only) -->
+  <div class="hidden md:grid grid-cols-1 md:grid-cols-3 gap-4 mx-5 md:mx-20 mt-12">
+    <!-- <div class="relative group">
+      <Image class="w-full h-full object-cover rounded-md shadow-lg transform scale-100 group-hover:scale-105 transition-transform duration-500" 
+        src={} alt="Smile Design 1" />
+    </div> -->
+    <!-- Add more images as needed -->
+    {
+      cardsImages.map((item) => (
+        <div class="relative group">
+          <Image class="w-full h-full object-cover rounded-md shadow-lg transform scale-100 group-hover:scale-105 transition-transform duration-500" 
+            src={item.image} alt={item.alt} />
+        </div>
+      ))
+    }
   </div>
   
   <!-- Ajuste del espacio entre la sección de video y los beneficios -->
@@ -117,7 +164,34 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
   </style>
 </noscript>
 
+<script>
+  const container = document.getElementById('carousel-container');
+  let scrollAmount = 0;
+
+  // Auto-scroll every 3 seconds
+  setInterval(() => {
+    container.scrollBy({ left: 300, behavior: 'smooth' });
+    scrollAmount += 300;
+    if (scrollAmount >= container.scrollWidth - container.clientWidth) {
+      scrollAmount = 0;
+      container.scrollTo({ left: 0 });
+    }
+  }, 3000);
+
+  // Manual scroll buttons
+  document.getElementById('prev').addEventListener('click', () => {
+    container.scrollBy({ left: -300, behavior: 'smooth' });
+  });
+  document.getElementById('next').addEventListener('click', () => {
+    container.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+</script>
+
 <style>
+  html {
+    scroll-behavior: smooth;
+  }
+
   @keyframes float {
     0% {
       transform: translate3d(0, 0, 0);

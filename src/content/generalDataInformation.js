@@ -1,3 +1,16 @@
+import melissa_oscar from '../assets/melissa_oscar.jpeg';
+import oscar3 from '../assets/orcar_3.jpeg';
+import melissa_oscar_2 from '../assets/oscar_melissa.jpeg';
+import melissa_oscar_3 from '../assets/melissa_oscar_2.jpeg';
+import grupal_2 from '../assets/grupal_2.jpeg';
+import grupal from '../assets/grupal.jpeg';
+import meslissa_1 from '../assets/melissa_1.jpeg';
+
+import card_1 from '../assets/card_1.jpeg';
+import card_2 from '../assets/card_2.jpg';
+import card_3 from '../assets/card_3.jpg';
+
+
 const bannerInformation = {
   tittle: 'Carillas Indirectas',
   tecnique: 'Técnica MO',
@@ -8,8 +21,57 @@ const bannerInformation = {
     'Trabajar inteligente, ganando más y dando mayor valor a tus pacientes.',
   ],
   buttonLabel: 'Quiero mi cupo',
-  buttonLink: 'https://api.whatsapp.com/send?phone=573204334436&text=Hola%20quiero%20mi%20cupo%20para%20el%20curso%20de%20Carillas%20Indirectas',
+  buttonLink: 'https://pay.hotmart.com/A94698317I?off=gsjevx42',
 };
-
-export default bannerInformation;
   
+const carrouselImages = [
+  {
+    image: meslissa_1,
+    alt: 'Melissa',
+  },
+  {
+    image: grupal,
+    alt: 'Grupo',
+  },
+  {
+    image: grupal_2,
+    alt: 'Grupo',
+  },
+  {
+    image: melissa_oscar_3,
+    alt: 'Melissa y Oscar',
+  },
+  {
+    image: melissa_oscar,
+    alt: 'Melissa y Oscar',
+  },
+  {
+    image: oscar3,
+    alt: 'Oscar',
+  },
+  {
+    image: melissa_oscar_2,
+    alt: 'Melissa y Oscar',
+  },
+];
+
+const cardsImages = [
+  {
+    image: card_1,
+    alt: 'carillas con estetica natural',
+  },
+  {
+    image: card_2,
+    alt: 'evita errores comunes en la tecnica',
+  },
+  {
+    image: card_3,
+    alt: 'trabajo inteligente',
+  },
+];
+
+export { 
+  carrouselImages,
+  bannerInformation,
+  cardsImages
+};
