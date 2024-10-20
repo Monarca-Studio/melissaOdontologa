@@ -11,28 +11,37 @@ import ContentSection from "~/components/content-section.astro";
 <ContentSection title="" id="intro">
   <!-- <Icon slot="eyebrow" name="logomark" class="size-32" /> -->
   <Image slot="eyebrow" class="w-10 m-0" src={logo_mo} alt="Melissa Odontologa" />
+  <div class="px-10 md:px-40">
 
-  <!-- show melissa2 y oscar1 images in a profesional grid -->
-  <div class="grid grid-cols-2 gap-1 sm:grid-cols-2 mb-5">
-    <Image class="h-full w-full object-cover rounded-md shadow-lg" src={melissa2} alt="Melissa Odontologa" />
-    <Image class="h-full w-full object-cover rounded-md shadow-lg" src={oscar1} alt="Oscar" />
+    <div class="grid grid-cols-2 gap-2 items-center justify-center md:mx-auto md:max-w-2xl">
+      <Image 
+        class="h-full w-full object-cover rounded-md shadow-lg" 
+        src={melissa2} 
+        alt="Melissa Odontologa" 
+      />
+      <Image 
+        class="h-full w-full object-cover rounded-md shadow-lg" 
+        src={oscar1} 
+        alt="Oscar" 
+      />
+    
+    </div>
+    <div class="text-sm text-justify my-5 space-y-4 px-0 md:px-20">
+      <p>
+        Pero créeme, esa situación cambiará a partir de ahora.
+      </p>
+      <p>
+        Por eso, he desarrollado un entrenamiento completo enfocado en carillas de resina indirectas, creemos firmemente que es la técnica más simple, cómoda y segura para lograr resultados de excelencia. 
+      </p>
+      <p>
+        Este curso no solo te enseñará la técnica; es una guía completa para alcanzar resultados precisos y naturales para tus pacientes, optimizar tu productividad clínica y convertirte en un profesional muy solicitado en tu área.
+      </p>
+    </div>
+
+    <div class="px-20">
+      <a href="https://melissaodontologa.com/curso-carillas-resina-indirectas/" class="w-full block mb-10 px-10 py-5 bg-gold text-white font-semibold rounded-md hover:bg-yellow-600 hover:text-white transition-colors align-center text-center">
+        Haz clic aquí para acceder al curso
+      </a>
+    </div>
   </div>
-
-  <div class="text-sm text-justify my-5 space-y-4">
-    <p>
-      Pero créeme, esa situación cambiará a partir de ahora.
-    </p>
-    <p>
-      Por eso, he desarrollado un entrenamiento completo enfocado en carillas de resina indirectas, creemos firmemente que es la técnica más simple, cómoda y segura para lograr resultados de excelencia. 
-    </p>
-    <p>
-      Este curso no solo te enseñará la técnica; es una guía completa para alcanzar resultados precisos y naturales para tus pacientes, optimizar tu productividad clínica y convertirte en un profesional muy solicitado en tu área.
-    </p>
-  </div>
-
-  <!-- create a button -->
-  <!-- <a href="https://melissaodontologa.com/curso-carillas-resina-indirectas/" target="_blank" class="mt-4 px-6 py-4 bg-amber-300 text-white font-semibold rounded-md hover:bg-yellow-500 hover:text-white transition-colors">
-    Acceder al curso
-  </a> -->
-  <Button label="test" size="large" url="#" bg=/>
 </ContentSection>
