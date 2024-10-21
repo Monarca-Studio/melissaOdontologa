@@ -8,7 +8,7 @@ const features: Array<FeatureItem> = [
   {
     title: "Confianza y seguridad",
     description:
-      "Tener confianza y seguridad para trabajar con carillas de resina indirecta",
+      "Tener confianza y seguridad para trabajar con carillas de resina indirecta.",
     icon: "mdi:tooth-outline",
   },
   {
@@ -20,13 +20,13 @@ const features: Array<FeatureItem> = [
   {
     title: "Destacar en su entorno laboral",
     description:
-      "Destacar en su entorno laboral con una base de pacientes felices que recomienden su trabajo.  ",
+      "Destacar en su entorno laboral con una base de pacientes felices que recomienden su trabajo.",
     icon: "mdi:tooth-outline",
   },
   {
     title: "Ofrecer una mejor odontología",
     description:
-      "Ofrecer una mejor odontología estética y restauradora , mantenimiento el compromiso con la salud de los pacientes.",
+      "Ofrecer una mejor odontología estética y restauradora, manteniendo el compromiso con la salud de los pacientes.",
     icon: "mdi:tooth-outline",
   },
   {
@@ -38,50 +38,81 @@ const features: Array<FeatureItem> = [
   {
     title: "Trabajar de forma inteligente",
     description:
-      "Trabajar de forma inteligente, logrando metas financieras a través  de las carillas de resina indirecta ",
+      "Trabajar de forma inteligente, logrando metas financieras a través de las carillas de resina indirecta.",
     icon: "mdi:tooth-outline",
   },
 ];
 ---
 
 <ContentSection title="" id="features">
-  <h1 class="text-navy text-center font-extrabold tracking-tight text-4xl">
+  <h1 class="text-navy text-center font-extrabold tracking-tight text-4xl animate-fadeIn">
     Carillas indirectas:
   </h1>
   <br>
-  <h2 class="text-navy text-center font-extrabold text-2xl">
+  <h2 class="text-navy text-center font-extrabold text-2xl animate-fadeIn delay-200">
     Técnica MO <span class="text-gold"> es para quien desea...</span>
   </h2>
   <ul class="grid max-w-6xl gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-10">
     {
-      features.map(({ title, description, icon }) => (
-        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
-          <div class="size-16 rounded-full border-2 border-current p-3">
-            <Icon name={icon} class="size-full" />
+      features.map(({ title, description, icon }, index) => (
+        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:border-gold hover:shadow-lg animate-slideUp delay-{index * 100}">
+          <div class="size-16 rounded-full border-2 border-current p-3 transition-all duration-500 ease-in-out hover:border-gold hover:shadow-[0_0_10px_rgba(212,175,55,0.5)]">
+            <Icon name={icon} class="size-full text-gold" />
           </div>
-          {/* <p class="text-center font-extrabold text-xl">{title}</p> */}
+          <p class="text-center font-extrabold text-xl text-navy">{title}</p>
           <p class="text-center text-offset text-sm">{description}</p>
         </li>
       ))
     }
   </ul>
-  <a href={bannerInformation.buttonLink} class="block mb-2 px-10 py-5 bg-gold text-white font-semibold rounded-md hover:bg-goldDark hover:text-white transition-colors align-center text-center">
+  <a href={bannerInformation.buttonLink} class="block mb-2 px-10 py-5 bg-gold text-white font-semibold rounded-md hover:bg-goldDark hover:text-white transition-colors align-center text-center animate-fadeIn delay-400">
     Haz clic aquí para acceder al curso
   </a>
-  <p class="text-xs bg-black text-white mt-2 py-1 px-1">
+  <p class="text-xs bg-black text-white mt-2 py-1 px-1 animate-fadeIn delay-600">
     acceso inmediato, completo y seguro
   </p>
-
-  <!-- create container to display or render a video -->
-  <!-- <div class="grid grid-cols-1 gap-4 my-10">
-    <iframe
-      width="250"
-      height="150"
-      src="https://res.cloudinary.com/dbyp3pr3d/video/upload/v1729030500/video_editado_landing_page_frhxn6.mp4"
-      title="YouTube video player"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
-  </div> -->
-
 </ContentSection>
+
+<style>
+  /* Animación de aparición */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-in forwards;
+  }
+
+  /* Animación de deslizamiento */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slideUp {
+    animation: slideUp 1s ease-in forwards;
+  }
+
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .delay-600 {
+    animation-delay: 0.6s;
+  }
+</style>

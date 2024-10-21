@@ -53,70 +53,27 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
       </video>
     </div>
   </div>
-
-  <!-- Horizontal Carousel with Arrows and Auto-scroll -->
-  <div class="relative mx-5 md:mx-20 mt-12 overflow-hidden">
-    <!-- Left Arrow -->
-    <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gold text-white p-2 rounded-full z-10 hover:bg-yellow-500 transition" id="prev">
-      &#10094;
-    </button>
-
-    <!-- Carousel Items -->
-    <div class="flex space-x-4 transition-transform duration-700 ease-out" id="carousel-container">
-      <!-- <div class="relative group flex-shrink-0 w-[300px]">
-        <Image class="w-full h-full object-cover rounded-md shadow-lg transform scale-100 group-hover:scale-105 transition-transform duration-500" 
-          src={} alt="Smile Design 1" />
-      </div> -->
-      <!-- Add more images as needed -->
-      {
-        carrouselImages.map((item) => (
-          <div class="relative group flex-shrink-0 w-[300px]">
-            <Image class="w-full h-full object-cover rounded-md shadow-lg transform scale-100 group-hover:scale-105 transition-transform duration-500" 
-              src={item.image} alt={item.alt} />
-          </div>
-        ))
-      }
-    </div>
-
-    <!-- Right Arrow -->
-    <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gold text-white p-2 rounded-full z-10 hover:bg-yellow-500 transition" id="next">
-      &#10095;
-    </button>
-  </div>
-
-  <!-- Gallery for Smile Design Images (Desktop Only) -->
-  <div class="hidden md:grid grid-cols-1 md:grid-cols-3 gap-4 mx-5 md:mx-20 mt-12">
-    <!-- <div class="relative group">
-      <Image class="w-full h-full object-cover rounded-md shadow-lg transform scale-100 group-hover:scale-105 transition-transform duration-500" 
-        src={} alt="Smile Design 1" />
-    </div> -->
-    <!-- Add more images as needed -->
-    {
-      cardsImages.map((item) => (
-        <div class="relative group">
-          <Image class="w-full h-full object-cover rounded-md shadow-lg transform scale-100 group-hover:scale-105 transition-transform duration-500" 
-            src={item.image} alt={item.alt} />
-        </div>
-      ))
-    }
-  </div>
   
-  <!-- Ajuste del espacio entre la sección de video y los beneficios -->
+  <!-- Updated Cards with Images -->
   <div class="relative grid place-items-center px-4 pt-6 pb-8 sm:pt-2 sm:pb-6 mx-5 grid-cols-1 md:grid-cols-3 gap-6 mb-8 mt-10 md:-mt-16">
     {bannerInformation.list.map((item) => (
-        <div class="flex flex-col items-center bg-white border border-gray-300 rounded-lg shadow-md p-6 max-w-xs mx-auto min-h-[200px] transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-[0_0_0_5px_rgba(212,175,55,0.5)] hover:border-gold">
-          <div class="text-gold text-2xl mb-1">
-            <!-- Icono de diente mdi:tooth -->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-gold">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </div>
-          <p class="text-sm text-gray-700 text-center">
-            {item}
-          </p>
+      <div class="flex flex-col items-center bg-white border border-gray-300 rounded-lg shadow-md p-6 max-w-xs mx-auto min-h-[350px] transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-[0_0_0_5px_rgba(212,175,55,0.5)] hover:border-gold">
+        <!-- Image at the top of the card -->
+        <Image src={item.image} alt={`Imagen`} class="w-full h-36 object-cover rounded-md mb-4" />
+        
+        <!-- Icon -->
+        <div class="text-gold text-2xl mb-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-gold">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
         </div>
+
+        <!-- Text content -->
+        <p class="text-sm text-gray-700 text-center">
+          {item.text}
+        </p>
+      </div>
     ))}
-  </div>
   </div>
 
   <!-- Arrow Button positioned between sections -->
@@ -163,29 +120,6 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
     }
   </style>
 </noscript>
-
-<script>
-  const container = document.getElementById('carousel-container');
-  let scrollAmount = 0;
-
-  // Auto-scroll every 3 seconds
-  setInterval(() => {
-    container.scrollBy({ left: 300, behavior: 'smooth' });
-    scrollAmount += 300;
-    if (scrollAmount >= container.scrollWidth - container.clientWidth) {
-      scrollAmount = 0;
-      container.scrollTo({ left: 0 });
-    }
-  }, 3000);
-
-  // Manual scroll buttons
-  document.getElementById('prev').addEventListener('click', () => {
-    container.scrollBy({ left: -300, behavior: 'smooth' });
-  });
-  document.getElementById('next').addEventListener('click', () => {
-    container.scrollBy({ left: 300, behavior: 'smooth' });
-  });
-</script>
 
 <style>
   html {

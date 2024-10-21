@@ -1,21 +1,27 @@
 ---
 import ContentSection from "~/components/content-section.astro";
+import Flyer from "./flyer.astro";
 ---
 
 <ContentSection title="" id="testimonials">
   <!-- Testimonials Section -->
-  <div class="bg-gray-800 py-8 px-4 rounded-lg shadow-md">
-    <h3 class="text-2xl font-bold text-center text-gold mb-6">Testimonios de Estudiantes</h3>
+  <div class="bg-gray-800 py-8 px-4 shadow-md">
+    <h3 class="text-2xl font-bold text-center text-gold mb-6">Algunos de nuestros Testimonios:</h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       <div class="bg-gray-700 p-4 rounded-lg">
-        <p class="text-sm text-gray-300">"Este curso cambió mi práctica profesional. Ahora realizo carillas con confianza."</p>
-        <h4 class="font-bold text-gold mt-2">Dr. Jorge Pérez</h4>
+        <p class="text-sm text-gray-300">"La verdad felicitaciones muchas gracias por compartir su conocimiento, esto nos aclara muchas dudas."</p>
+        <h4 class="font-bold text-gold mt-2">Paula Giraldo</h4>
       </div>
       <div class="bg-gray-700 p-4 rounded-lg">
-        <p class="text-sm text-gray-300">"Melissa es una excelente instructora, me ayudó a perfeccionar mi técnica."</p>
-        <h4 class="font-bold text-gold mt-2">Dra. Carla Martínez</h4>
+        <p class="text-sm text-gray-300">"Gracias por todo muchachos, se que sacan el tiempo y se preparan todavia más para esto, son unos tesos y los admiramos bastante un abrazo y a seguir aprendiendo más y más."</p>
+        <h4 class="font-bold text-gold mt-2">Jonhatan Cardona</h4>
+      </div>
+      <div class="bg-gray-700 p-4 rounded-lg">
+        <p class="text-sm text-gray-300">"Chicos excelentes estos espacios, me encantó, me resolvieron muchas dudas de forma muy simplificada, son un super equipo y me motivan un montón."</p>
+        <h4 class="font-bold text-gold mt-2">Sara Mesa</h4>
       </div>
       <!-- More testimonials... -->
     </div>
+    <Flyer />
   </div>
 </ContentSection>

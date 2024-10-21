@@ -1,0 +1,94 @@
+---
+import { Icon } from "astro-icon/components";
+import type { IconName } from "astro-icon/components";
+
+const paymentOptions: Array<{ icon: IconName; label: string }> = [
+  { icon: "mdi:credit-card-outline", label: "Tarjeta de Crédito" },
+  { icon: "mdi:cash", label: "Efectivo (Efecty)" },
+  { icon: "mdi:paypal", label: "Paypal" },
+  { icon: "mdi:bank", label: "PSE / Transferencia" },
+];
+---
+
+<div class="relative bg-gray-900 text-white py-10 px-5 rounded-lg shadow-lg w-full max-w-lg mx-auto my-10 text-center">
+  <!-- Título -->
+  <h2 class="text-2xl font-bold text-gold mb-4 animate-fadeIn">
+    Da el primer paso para transformar tu carrera
+  </h2>
+
+  <!-- Descripción -->
+  <p class="text-lg font-semibold text-gray-100 mb-4 animate-fadeIn delay-200">
+    Obtén acceso inmediato al contenido de Facetas Personalizadas y destaca en el mercado.
+  </p>
+
+  <!-- Precio y opciones -->
+  <div class="bg-orange-400 text-3xl font-bold py-2 px-4 rounded-md mb-4 animate-fadeIn delay-400">
+    $1.104.322,00 o en 12 cuotas de $92.026,00
+  </div>
+  <p class="text-sm font-semibold text-gray-100 mb-2 animate-fadeIn delay-600">
+    Sin intereses en tu tarjeta de crédito.
+  </p>
+
+  <!-- Botón de acción -->
+  <a href="https://pay.hotmart.com/A94698317I?off=gsjevx42" target="_blank" class="block mb-5 px-8 py-4 bg-green-600 text-black font-bold rounded-lg hover:bg-green-700 hover:text-white transition-all duration-300 transform hover:scale-105 animate-bounce">
+    ¡Quiero tener acceso ahora!
+  </a>
+  <p class="text-sm text-gray-400">
+    <em>Haz clic aquí para comprar con total seguridad</em>
+  </p>
+
+  <!-- Opciones de pago -->
+  <div class="flex justify-center gap-5 mt-4">
+    {paymentOptions.map(({ icon, label }) => (
+      <div class="text-center">
+        <Icon name={icon} class="w-8 h-8 text-white" />
+        <p class="text-xs text-gray-100 mt-1">{label}</p>
+      </div>
+    ))}
+  </div>
+
+  <!-- Nota legal -->
+  <p class="text-xs text-gray-500 mt-5">
+    *Acceso inmediato al curso después de la compra. Garantía Hotmart.
+  </p>
+</div>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .delay-600 {
+    animation-delay: 0.6s;
+  }
+
+  .animate-bounce {
+    animation: bounce 1.5s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+</style>
