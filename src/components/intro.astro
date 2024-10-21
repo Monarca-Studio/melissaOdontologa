@@ -11,7 +11,7 @@ import ContentSection from "~/components/content-section.astro";
 
 <ContentSection title="" id="intro">
   <!-- <Icon slot="eyebrow" name="logomark" class="size-32" /> -->
-  <Image slot="eyebrow" class="w-10 m-0" src={logo_mo} alt="Melissa Odontologa" />
+  <Image slot="eyebrow" class="w-10 mt-10 mb-0" src={logo_mo} alt="Melissa Odontologa" />
   <div class="px-10 md:px-40">
 
     <div class="grid grid-cols-2 gap-2 items-center justify-center md:mx-auto md:max-w-2xl">
@@ -40,7 +40,12 @@ import ContentSection from "~/components/content-section.astro";
     </div>
 
     <div class="px-0 md:px-20">
-      <a href={bannerInformation.buttonLink} class="w-full block mb-10 px-10 py-5 bg-gold text-white font-semibold rounded-md hover:bg-goldDark hover:text-white transition-colors align-center text-center">
+      <!-- <a href={bannerInformation.buttonLink} class="w-full block mb-10 px-10 py-5 bg-gold text-white font-semibold rounded-md hover:bg-goldDark hover:text-white transition-colors align-center text-center">
+        Haz clic aquí para acceder al curso
+      </a> -->
+      <a href={bannerInformation.buttonLink} target="_blank"
+        class="w-full px-10 py-5 bg-gold text-white font-semibold rounded-md hover:bg-goldDark hover:text-white transition-colors transform hover:scale-105 relative overflow-hidden z-10 shadow-md hover:shadow-lg flex items-center justify-center"
+      >
         Haz clic aquí para acceder al curso
       </a>
     </div>

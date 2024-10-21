@@ -1,37 +1,26 @@
 ---
 import { Image } from "astro:assets";
-import { carrouselImages } from "~/content/generalDataInformation";
+import { carrouselImages1 } from "~/content/generalDataInformation";
 ---
 
-<section>
-  <!-- Horizontal Carousel with Arrows and Auto-scroll -->
-  <div class="relative mx-5 md:mx-20 mt-12 overflow-hidden">
+<section class="relative mx-5 md:mx-20 mt-12 overflow-hidden">
+  <!-- Carrusel para Mobile -->
+  <div class="block md:hidden relative">
     <!-- Left Arrow -->
     <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gold text-white p-2 rounded-full z-10 hover:bg-yellow-500 transition" id="prev">
       &#10094;
     </button>
 
-    <!-- Carousel Items -->
-    <div class="flex transition-transform duration-700 ease-out gap-20" id="carousel-container" data-images-count={carrouselImages.length}>
-      <!-- Cloned Last Item (For Infinite Scroll) -->
-      <div class="relative group flex-shrink-0 w-[300px]">
-        <Image class="w-full h-full object-cover rounded-md shadow-lg transform scale-100 group-hover:scale-105 transition-transform duration-500" 
-          src={carrouselImages[carrouselImages.length - 1].image} alt={carrouselImages[carrouselImages.length - 1].alt} />
-      </div>
+    <!-- Carousel Container -->
+    <div class="flex transition-transform ease-in-out duration-500" id="carousel-container">
       <!-- Carousel Images -->
       {
-        carrouselImages.map((item) => (
-          <div class="relative group flex-shrink-0 w-[300px]">
-            <Image class="w-full h-full object-cover rounded-md shadow-lg transform scale-100 group-hover:scale-105 transition-transform duration-500" 
-              src={item.image} alt={item.alt} />
+        carrouselImages1.map((item, index) => (
+          <div class="flex-shrink-0 w-full" key={index}>
+            <Image class="w-full h-full object-cover rounded-md shadow-lg" src={item.image} alt={item.alt} />
           </div>
         ))
       }
-      <!-- Cloned First Item (For Infinite Scroll) -->
-      <div class="relative group flex-shrink-0 w-[300px]">
-        <Image class="w-full h-full object-cover rounded-md shadow-lg transform scale-100 group-hover:scale-105 transition-transform duration-500" 
-          src={carrouselImages[0].image} alt={carrouselImages[0].alt} />
-      </div>
     </div>
 
     <!-- Right Arrow -->
@@ -39,55 +28,77 @@ import { carrouselImages } from "~/content/generalDataInformation";
       &#10095;
     </button>
   </div>
+
+  <!-- Grid para Desktop -->
+  <div class="hidden md:grid grid-cols-4 gap-4">
+    {
+      carrouselImages1.slice(0, 4).map((item, index) => (
+        <div class="w-full" key={index}>
+          <Image class="w-full h-full object-cover rounded-md shadow-lg" src={item.image} alt={item.alt} />
+        </div>
+      ))
+    }
+  </div>
+  <div class="hidden md:grid grid-cols-3 gap-4 mt-4">
+    {
+      carrouselImages1.slice(4, 7).map((item, index) => (
+        <div class="w-full" key={index}>
+          <Image class="w-full h-full object-cover rounded-md shadow-lg" src={item.image} alt={item.alt} />
+        </div>
+      ))
+    }
+  </div>
 </section>
 
 <script>
   const container = document.getElementById('carousel-container');
-  const imagesCount = parseInt(container.dataset.imagesCount, 10); // Número de imágenes
-  const itemWidth = 300; // Anchura de cada imagen
-  let currentIndex = 1; // Comenzamos en la primera imagen real (después del clonado)
+  let currentIndex = 0; // Start from the first image
+  const totalItems = container.children.length;
+  const itemWidth = container.children[0].offsetWidth; // Get the width of one item
 
-  // Posicionamos el carrusel en el primer item real (no el clonado)
-  container.style.transform = `translateX(${-itemWidth * currentIndex}px)`;
-
-  // Función para desplazarse al siguiente item
+  // Scroll to next item
   function scrollToNext() {
-    currentIndex++;
-    container.style.transition = 'transform 0.7s ease-out';
-    container.style.transform = `translateX(${-itemWidth * currentIndex}px)`;
-
-    // Cuando llegamos al final, sin que el usuario lo perciba, saltamos al primer item real
-    if (currentIndex === imagesCount + 1) {
-      setTimeout(() => {
-        container.style.transition = 'none'; // Eliminamos la transición temporalmente
-        currentIndex = 1; // Volvemos al primer item real
-        container.style.transform = `translateX(${-itemWidth * currentIndex}px)`;
-      }, 10000); // Esperamos que termine la animación de desplazamiento
+    if (currentIndex < totalItems - 1) {
+      currentIndex++;
+      container.style.transform = `translateX(-${itemWidth * currentIndex}px)`;
     }
   }
 
-  // Función para desplazarse al item anterior
+  // Scroll to previous item
   function scrollToPrev() {
-    currentIndex--;
-    container.style.transition = 'transform 0.7s ease-out';
-    container.style.transform = `translateX(${-itemWidth * currentIndex}px)`;
-
-    // Cuando llegamos al principio, sin que el usuario lo perciba, saltamos al último item real
-    if (currentIndex === 0) {
-      setTimeout(() => {
-        container.style.transition = 'none'; // Eliminamos la transición temporalmente
-        currentIndex = imagesCount; // Volvemos al último item real
-        container.style.transform = `translateX(${-itemWidth * currentIndex}px)`;
-      }, 10000); // Esperamos que termine la animación de desplazamiento
+    if (currentIndex > 0) {
+      currentIndex--;
+      container.style.transform = `translateX(-${itemWidth * currentIndex}px)`;
     }
   }
 
-  // Auto-scroll cada 5 segundos
-  setInterval(() => {
-    scrollToNext();
-  }, 10000);
-
-  // Controladores de los botones de flechas
-  document.getElementById('prev').addEventListener('click', scrollToPrev);
+  // Attach event listeners to arrows
   document.getElementById('next').addEventListener('click', scrollToNext);
+  document.getElementById('prev').addEventListener('click', scrollToPrev);
+
+  // Resize observer to handle responsiveness
+  window.addEventListener('resize', () => {
+    container.style.transition = 'none'; // Disable transition temporarily
+    const itemWidth = container.children[0].offsetWidth;
+    container.style.transform = `translateX(-${itemWidth * currentIndex}px)`;
+    setTimeout(() => container.style.transition = 'transform 0.5s ease-in-out', 100);
+  });
 </script>
+
+<style>
+  /* Carousel container adjustments */
+  #carousel-container {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  /* Make the buttons more prominent and centered */
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+  }
+</style>
