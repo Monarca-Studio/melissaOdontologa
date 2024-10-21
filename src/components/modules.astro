@@ -1,0 +1,94 @@
+---
+const modules = [
+  {
+    number: "01",
+    title: "Contenido del curso",
+    description: "Calendario de cursos",
+  },
+  {
+    number: "02",
+    title: "Introducción",
+    description: "Introducción",
+  },
+  {
+    number: "03",
+    title: "Aula Teórica",
+    description: "Aula Teórica, Carillas en resina indirecta",
+  },
+  {
+    number: "04",
+    title: "Materiales e instrumentos",
+    description: "Paciente 1. Resinas y espátulas que recomiendo. Bonus: Obtener modelo de yeso y preparar el modelo antes de iniciar la construcción.",
+  },
+  {
+    number: "05",
+    title: "Enfoquémonos en la construcción, caso con diastemas.",
+    description: `
+      1. Preparación del modelo y capa palatina 
+      2. Construcción de dentina 
+      3. Halo opaco 
+      4. Prolongaciones de mamelones 
+      5. Efecto opalescente 
+      6. Construcción capa final Esmalte 
+      7. Bonus: Resultado final sobre paciente.`,
+  },
+  {
+    number: "06",
+    title: "Directo al pulido y brillado.",
+    description: `
+      1. Preparación del modelo 
+      2. Capa Palatina 
+      3. Construcción dentina 
+      4. Halo opaco 
+      5. Prolongaciones de mamelones 
+      6. Trans opal 
+      7. Esmalte 
+      8. Demarcación de líneas de referencia 
+      9. Pulido 
+      10. Brillado 
+      11. Liberación de carillas 
+      12. Reparación de carillas 
+      13. Brillado final después de reparar 
+      14. Resultado final sobre modelo 
+      15. Bonus: Prueba Húmeda 
+      16. Bonus: Resultado final 
+      17. Bonus: Cementación.`,
+  },
+  {
+    number: "07",
+    title: "Bonus: Caso en vivo en YouTube",
+    description: `
+      1. Preparación del modelo y capa palatina 
+      2. Construcción de dentina 
+      3. Halo Opaco 
+      4. Extensiones de mamelones 
+      5. Efecto Trans opal 
+      6. Dentina Premolares 
+      7. Esmalte parte 1 
+      8. Esmalte parte 2 
+      9. Construcción finalizada.`,
+  },
+];
+---
+
+<section class="py-0 px-6">
+  <h2 class="text-navy text-center font-extrabold text-2xl mb-10">Módulos del Curso</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {modules.map(({ number, title, description }, index) => (
+      <div class={`bg-white p-6 rounded-lg shadow-lg flex flex-col text-center transform transition-transform hover:scale-105 ${index === modules.length - 1 ? 'lg:col-span-3' : ''}`}>
+        <div class="bg-gray-200 text-gold font-bold text-xl mb-4 w-16 h-16 rounded-full flex items-center justify-center mx-auto">{number}</div>
+        <h3 class="text-navy font-semibold text-lg mb-2">{title}</h3>
+        {/* <p class="text-gray-700 text-sm whitespace-pre-line">{description}</p> */}
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  /* Small animation and scale effect for hover */
+  .bg-white:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+</style>
