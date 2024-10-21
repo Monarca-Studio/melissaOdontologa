@@ -56,7 +56,7 @@ const features: Array<FeatureItem> = [
     {
       features.map(({ title, description, icon }, index) => (
         <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:border-gold hover:shadow-lg animate-slideUp delay-{index * 100}">
-          <div class="size-16 rounded-full border-2 border-current p-3 transition-all duration-500 ease-in-out hover:border-gold hover:shadow-[0_0_10px_rgba(212,175,55,0.5)]">
+          <div class="size-16 rounded-full border-2 p-3 transition-all duration-500 ease-in-out border-gold hover:border-gold hover:shadow-[0_0_10px_rgba(212,175,55,0.5)]">
             <Icon name={icon} class="size-full text-gold" />
           </div>
           <p class="text-center font-extrabold text-xl text-navy">{title}</p>
@@ -65,9 +65,9 @@ const features: Array<FeatureItem> = [
       ))
     }
   </ul>
-  <div class="relative">
+  <div class="  text-white mt-2 py-1 px-10 animate-fadeIn delay-600">
     <a href={bannerInformation.buttonLink} target="_blank"
-       class="w-full px-10 py-5 bg-gold text-white font-semibold rounded-md hover:bg-goldDark hover:text-white transition-colors transform hover:scale-105 relative overflow-hidden z-10 shadow-md hover:shadow-lg flex items-center justify-center"
+       class="w- align-middle text-center px-10 py-5 bg-gold text-white font-semibold rounded-md hover:bg-goldDark hover:text-white transition-colors transform hover:scale-105 relative overflow-hidden z-10 shadow-md hover:shadow-lg flex items-center justify-center"
     >
       Haz clic aquí para acceder al curso
     </a>

@@ -1,0 +1,38 @@
+---
+import { Image } from "astro:assets";
+import melissaImage from "~/assets/melissa_pc.png"; // Imagen subida
+
+const trainingInfo = {
+  title: "Entrenamiento grabado",
+  description: `Dentro de la plataforma, el alumno tendrá acceso a todas las aulas grabadas y actualizadas. 
+  Tendrá flexibilidad de ver las clases cuando quiera y desde donde quiera. Dedicando solo 30 minutos al día 
+  avanzará enormemente en su carrera. Solo necesitas conexión a internet o bajar las clases dentro de la app 
+  y verlas offline.`,
+  image: melissaImage,
+};
+---
+
+<section class="bg-gray-100 py-10 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+    <!-- Imagen del entrenamiento -->
+    <div class="flex justify-center">
+      <Image src={trainingInfo.image} alt="Entrenamiento grabado" class="w-full max-w-xs md:max-w-md object-cover rounded-lg shadow-lg" />
+    </div>
+
+    <!-- Descripción del entrenamiento -->
+    <div class="text-center md:text-left">
+      <h3 class="text-gold font-semibold text-2xl mb-4">{trainingInfo.title}</h3>
+      <p class="text-gray-700 text-sm mb-6">
+        {trainingInfo.description}
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Añadir un pequeño efecto de hover a la imagen */
+  .w-full:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+  }
+</style>

@@ -1,6 +1,7 @@
 ---
 import "@fontsource-variable/inter";
 import Compatibility from "~/components/compatibility.astro";
+import Carousel from "~/components/carousel.astro";
 import Features from "~/components/features.astro";
 import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
@@ -8,6 +9,10 @@ import Intro from "~/components/intro.astro";
 import Showcase from "~/components/showcase.astro";
 import Splash from "~/components/splash.astro";
 import Testimonials from "~/components/testimonials.astro";
+import WhatsappButton from "~/components/WhatsappButton.astro";
+import Flyer from "~/components/flyer.astro";
+import Benefits from "~/components/benefits.astro";
+import Platform from "~/components/platform.astro";
 import "~/styles/index.css";
 
 const { generator, site } = Astro;
@@ -64,13 +69,15 @@ const description =
   >
     <!-- <Header /> -->
     <Splash />
-    <div class="space-y-24 py-10">
+    <div class="space-y-24 mb-10">
       <Intro />
+      <Platform />
+      <Carousel />
       <Features />
-      <!-- <Testimonials /> -->
-      <!-- <Compatibility />
-      <Showcase /> -->
     </div>
+    <Benefits />
+    <Testimonials />
+    <WhatsappButton /> <!-- Añade el botón de WhatsApp aquí -->
     <Footer />
   </body>
 </html>
