@@ -17,29 +17,63 @@ import Modules from "~/components/modules.astro";
 import "~/styles/index.css";
 
 const { generator, site } = Astro;
-const image = new URL("social.jpg", site);
-const description =
-  "Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.";
+const image = new URL("logo_mo.png", site);
+const description = "Curso online de la Técnica MO de carillas en resina indirecta por la Dra. Melissa. Aprende a dominar esta técnica estética con clases prácticas y materiales de calidad. ¡Inscríbete ahora en Hotmart!";
+const title = "Curso Técnica MO - Dra. Melissa | Carillas en Resina Indirecta";
+const keywords = "Curso Técnica MO, carillas en resina indirecta, Dra. Melissa, curso online odontología estética, curso odontología Hotmart";
 ---
 
 <!doctype html>
-<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="light">
+<html lang="es" class="h-full motion-safe:scroll-smooth" data-theme="light">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/logo_mo.png" type="image/png" />
     <meta name="generator" content={generator} />
-
-    <title>Melissa Odontologa</title>
+    
+    <!-- Título y descripción -->
+    <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
 
-    <!-- social media -->
-    <meta property="og:title" content="Astro" />
-    <meta property="og:type" content="website" />
+    <!-- Metaetiquetas SEO -->
+    <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
     <meta property="og:url" content={site} />
+    <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Meta etiquetas adicionales -->
+    <meta name="author" content="Dra. Melissa - Técnica MO" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Datos estructurados (rich snippets) en JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Curso Técnica MO de Carillas en Resina Indirecta",
+      "description": "Aprende la Técnica MO de carillas en resina indirecta con la Dra. Melissa. Un curso online completo para odontólogos que buscan mejorar sus habilidades estéticas.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Hotmart",
+        "sameAs": "https://www.hotmart.com"
+      },
+      "educationalCredentialAwarded": "Certificado de Finalización",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "Online",
+        "instructor": {
+          "@type": "Person",
+          "name": "Dra. Melissa"
+        }
+      }
+    }
+    </script>
 
     <!-- initialize theme -->
     <script is:inline>
@@ -68,7 +102,6 @@ const description =
   <body
     class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >
-    <!-- <Header /> -->
     <Splash />
     <div class="space-y-24 mb-10">
       <Intro />
@@ -79,7 +112,7 @@ const description =
     </div>
     <Benefits />
     <Testimonials />
-    <WhatsappButton /> <!-- Añade el botón de WhatsApp aquí -->
+    <WhatsappButton />
     <Footer />
   </body>
 </html>
