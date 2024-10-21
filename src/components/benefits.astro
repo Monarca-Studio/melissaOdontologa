@@ -1,0 +1,84 @@
+---
+import { Image } from "astro:assets";
+import muestra_dientes_2 from "~/assets/muestra_diente_2.jpg"; // Imagen representativa para cada punto
+import durabilidadResistencia from "~/assets/durabilidad_resistencia.png";
+import optimizacionTiempo from "~/assets/optimizacion_tiempo.png";
+import menorSensibilidad from "~/assets/menor_sensibilidad.png";
+import solucionesPersonalizadas from "~/assets/soluciones_personalizadas.png";
+import valorPercepcion from "~/assets/valor_percepcion.png";
+---
+
+<section class="bg-gray-100 py-12 px-6 md:px-12">
+  <h2 class="text-navy text-center font-extrabold text-4xl mb-4">Resultados y Beneficios de las Carillas Indirectas</h2>
+  <p class="text-gray-700 text-center max-w-3xl mx-auto mb-8">
+    Las carillas de resina indirecta ofrecen resultados avanzados que mejoran la experiencia clínica tanto para el odontólogo como para el paciente. Descubre cómo puedes optimizar tus tratamientos y ofrecer un servicio de alta calidad.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Punto 1 -->
+    <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
+      <Image src={muestra_dientes_2} alt="Resultados Estéticos" class="w-full h-auto rounded-md mb-4" />
+      <h3 class="text-gold font-semibold text-xl mb-2">Resultados estéticos de alta calidad</h3>
+      <p class="text-gray-700">
+        “Ofrece a tus pacientes carillas de resina indirecta con un acabado superior y natural. Mejora la estética dental con un brillo y color personalizado que garantiza sonrisas perfectas.”
+      </p>
+    </div>
+
+    <!-- Punto 2 -->
+    <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
+      <Image src={muestra_dientes_2} alt="Durabilidad y Resistencia" class="w-full h-auto rounded-md mb-4" />
+      <h3 class="text-gold font-semibold text-xl mb-2">Mayor durabilidad y resistencia</h3>
+      <p class="text-gray-700">
+        “Las carillas indirectas están diseñadas para resistir el desgaste diario, garantizando un tratamiento duradero y de bajo mantenimiento, lo que genera mayor satisfacción a largo plazo para tus pacientes.”
+      </p>
+    </div>
+
+    <!-- Punto 3 -->
+    <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
+      <Image src={muestra_dientes_2} alt="Optimización del Tiempo Clínico" class="w-full h-auto rounded-md mb-4" />
+      <h3 class="text-gold font-semibold text-xl mb-2">Optimización del tiempo clínico</h3>
+      <p class="text-gray-700">
+        “Reduce el tiempo de intervención directa en el sillón dental. Con las carillas indirectas, el trabajo se realiza en el laboratorio, lo que te permite atender más pacientes sin comprometer la calidad.”
+      </p>
+    </div>
+
+    <!-- Punto 4 -->
+    <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
+      <Image src={muestra_dientes_2} alt="Menor Sensibilidad" class="w-full h-auto rounded-md mb-4" />
+      <h3 class="text-gold font-semibold text-xl mb-2">Menor sensibilidad postoperatoria para el paciente</h3>
+      <p class="text-gray-700">
+        “Minimiza la incomodidad y sensibilidad en tus pacientes gracias a la colocación más precisa y controlada de las carillas de resina indirecta. Una experiencia más cómoda para todos.”
+      </p>
+    </div>
+
+    <!-- Punto 5 -->
+    <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
+      <Image src={muestra_dientes_2} alt="Soluciones Personalizadas" class="w-full h-auto rounded-md mb-4" />
+      <h3 class="text-gold font-semibold text-xl mb-2">Soluciones personalizadas para casos complejos</h3>
+      <p class="text-gray-700">
+        “Resuelve problemas estéticos y funcionales complejos con mayor precisión. Las carillas indirectas te permiten ofrecer soluciones personalizadas para cada caso, desde fracturas hasta desgaste dental.”
+      </p>
+    </div>
+
+    <!-- Punto 6 -->
+    <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
+      <Image src={muestra_dientes_2} alt="Aumento del Valor Percibido" class="w-full h-auto rounded-md mb-4" />
+      <h3 class="text-gold font-semibold text-xl mb-2">Aumenta el valor percibido de tus tratamientos</h3>
+      <p class="text-gray-700">
+        “Diferénciate de la competencia ofreciendo carillas de resina indirecta, un tratamiento estético avanzado que no solo mejora la sonrisa de tus pacientes, sino que también incrementa el valor percibido de tu consulta.”
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Animación y efectos */
+  .bg-white {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  .bg-white:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+</style>
