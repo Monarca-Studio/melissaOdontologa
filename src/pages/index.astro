@@ -1,118 +1,57 @@
 ---
-import "@fontsource-variable/inter";
-import Compatibility from "~/components/compatibility.astro";
-import Carousel from "~/components/carousel.astro";
-import Features from "~/components/features.astro";
-import Footer from "~/components/footer.astro";
-import Header from "~/components/header.astro";
-import Intro from "~/components/intro.astro";
-import Showcase from "~/components/showcase.astro";
-import Splash from "~/components/splash.astro";
-import Testimonials from "~/components/testimonials.astro";
-import WhatsappButton from "~/components/WhatsappButton.astro";
-import Flyer from "~/components/flyer.astro";
-import Benefits from "~/components/benefits.astro";
-import Platform from "~/components/platform.astro";
-import Modules from "~/components/modules.astro";
-import "~/styles/index.css";
-
+import { Image } from "astro:assets";
+import logo_mo from "~/assets/logo_mo.png";
+const whatsappLink = "https://wa.me/+573194498266"; // Cambia este número por tu número de WhatsApp
+const courseLink = "/curso-tecnica-mo"; // Ruta para la landing page
 const { generator, site } = Astro;
 const image = new URL("logo_mo.png", site);
-const description = "Curso online de la Técnica MO de carillas en resina indirecta por la Dra. Melissa. Aprende a dominar esta técnica estética con clases prácticas y materiales de calidad. ¡Inscríbete ahora en Hotmart!";
-const title = "Curso Técnica MO - Dra. Melissa | Carillas en Resina Indirecta";
-const keywords = "Curso Técnica MO, carillas en resina indirecta, Dra. Melissa, curso online odontología estética, curso odontología Hotmart";
+import bg_tecnica_mo from "~/assets/melissa_2.jpeg";
+import whatsapp_bg from "~/assets/grupal.jpeg";
 ---
 
 <!doctype html>
-<html lang="es" class="h-full motion-safe:scroll-smooth" data-theme="light">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/logo_mo.png" type="image/png" />
-    <meta name="generator" content={generator} />
-    
-    <!-- Título y descripción -->
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
+    <meta name="description" content="Página principal para agendar citas y acceder al curso de Técnica MO." />
+    <title>Página Principal | Técnica MO</title>
 
-    <!-- Metaetiquetas SEO -->
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <!-- Meta etiquetas SEO -->
+    <meta property="og:title" content="Página Principal | Técnica MO" />
+    <meta property="og:description" content="Accede al curso Técnica MO o agenda una cita con la Dra. Melissa." />
     <meta property="og:image" content={image} />
-    <meta property="og:url" content={site} />
+    <meta property="og:url" content={courseLink} />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:title" content="Página Principal | Técnica MO" />
+    <meta name="twitter:description" content="Accede al curso Técnica MO o agenda una cita con la Dra. Melissa." />
     <meta name="twitter:image" content={image} />
-
-    <!-- Meta etiquetas adicionales -->
-    <meta name="author" content="Dra. Melissa - Técnica MO" />
-    <meta name="robots" content="index, follow" />
-
-    <!-- Datos estructurados (rich snippets) en JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Curso Técnica MO de Carillas en Resina Indirecta",
-      "description": "Aprende la Técnica MO de carillas en resina indirecta con la Dra. Melissa. Un curso online completo para odontólogos que buscan mejorar sus habilidades estéticas.",
-      "provider": {
-        "@type": "Organization",
-        "name": "Hotmart",
-        "sameAs": "https://www.hotmart.com"
-      },
-      "educationalCredentialAwarded": "Certificado de Finalización",
-      "hasCourseInstance": {
-        "@type": "CourseInstance",
-        "courseMode": "Online",
-        "instructor": {
-          "@type": "Person",
-          "name": "Dra. Melissa"
-        }
-      }
-    }
-    </script>
-
-    <!-- initialize theme -->
-    <script is:inline>
-      const themeSaved = localStorage.getItem("theme");
-
-      if (themeSaved) {
-        document.documentElement.dataset.theme = "light";
-      } else {
-        const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)",
-        ).matches;
-        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
-      }
-
-      window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", (event) => {
-          if (!localStorage.getItem("theme")) {
-            document.documentElement.dataset.theme = event.matches
-              ? "dark"
-              : "light";
-          }
-        });
-    </script>
   </head>
-  <body
-    class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
-  >
-    <Splash />
-    <div class="space-y-24 mb-10">
-      <Intro />
-      <Platform />
-      <Modules />
-      <Carousel />
-      <Features />
-    </div>
-    <Benefits />
-    <Testimonials />
-    <WhatsappButton />
-    <Footer />
+  <body class="bg-gray-800 h-screen flex flex-col items-center justify-center text-white">
+    <section class="flex flex-col items-center justify-center min-h-screen bg-gray-800">
+      <div class="text-center">
+        <!-- Logo grande centrado -->
+        <img src="/logo_mo.png" alt="Logo MO Cursos" class="w-32 md:w-64 mx-auto mb-8" />
+      </div>
+    
+      <!-- Botones alineados al centro en desktop y mobile -->
+      <div class="flex flex-col items-center space-y-4 mt-8">
+        <a
+          href="/curso-tecnica-mo"
+          class="text-white w-full text-center rounded-lg text-lg md:text-xl hover:scale-105 transition-transform bg-gradient-to-r from-orange-400 to-orange-600  py-10 px-8 hover:from-orange-500 hover:to-orange-700 transform"
+        >
+          Ir al Curso Técnica MO
+        </a>
+        <a
+          href="https://wa.me/573016154557"
+          target="_blank"
+          class="w-full text-white rounded-lg text-lg md:text-xl hover:scale-105 transition-transform bg-gradient-to-r from-green-500 to-green-700  py-10 px-8 hover:from-green-600 hover:to-green-800 transform"
+        >
+          Agendar una Cita por WhatsApp
+        </a>
+      </div>
+    </section>
   </body>
 </html>

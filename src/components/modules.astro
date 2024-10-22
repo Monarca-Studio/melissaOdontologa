@@ -18,7 +18,10 @@ const modules = [
   {
     number: "04",
     title: "Materiales e instrumentos",
-    description: "Paciente 1. Resinas y espátulas que recomiendo. Bonus: Obtener modelo de yeso y preparar el modelo antes de iniciar la construcción.",
+    description: `
+      Paciente 1. Resinas y espátulas que recomiendo
+      Bonus: Obtener modelo de yeso y preparar el modelo antes de iniciar la construcción.
+      `,
   },
   {
     number: "05",
@@ -69,26 +72,72 @@ const modules = [
       9. Construcción finalizada.`,
   },
 ];
+
 ---
 
 <section class="py-0 px-6">
   <h2 class="text-navy text-center font-extrabold text-2xl mb-10">Módulos del Curso</h2>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <div class="divide-y divide-gray-200 px-1 md:px-40">
     {modules.map(({ number, title, description }, index) => (
-      <div class={`bg-white p-6 rounded-lg shadow-lg flex flex-col text-center transform transition-transform hover:scale-105 ${index === modules.length - 1 ? 'lg:col-span-3' : ''}`}>
-        <div class="bg-gray-200 text-gold font-bold text-xl mb-4 w-16 h-16 rounded-full flex items-center justify-center mx-auto">{number}</div>
-        <h3 class="text-navy font-semibold text-lg mb-2">{title}</h3>
-        {/* <p class="text-gray-700 text-sm whitespace-pre-line">{description}</p> */}
-      </div>
+      <details class="group py-6">
+        <summary class="flex items-center justify-between cursor-pointer">
+          <div class="flex items-center">
+            <div class="bg-grey-200 text-gold font-bold text-base w-12 h-12 rounded-full flex items-center justify-center mr-4">
+              {number}
+            </div>
+            <h3 class="text-navy hover:text-gold  font-semibold text-base w-full">
+              {title}
+            </h3>
+          </div>
+          <div class="flex items-center justify-center w-12 h-12">
+            <svg class="w-6 h-6 text-gray-500 group-open:rotate-180 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+        </summary>
+
+        <p class="mt-4 text-gray-700 text-sm whitespace-pre-line pl-16">
+          {description}
+        </p>
+      </details>
     ))}
   </div>
 </section>
 
 <style>
-  /* Small animation and scale effect for hover */
-  .bg-white:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  /* Transition for opening/closing the accordion */
+  details > summary {
+    list-style: none;
+  }
+
+  details[open] summary svg {
+    transform: rotate(180deg);
+  }
+
+  /* Hover effects */
+
+
+  /* Ensure all circles and arrows are the same size and properly aligned */
+  .w-12, .h-12 {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .w-6, .h-6 {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  h3 {
+    word-break: break-word;
+  }
+
+  /* Adjust the margin between the number and title */
+  .mr-4 {
+    margin-right: 1rem; /* Consistent space between the number and title */
   }
 </style>
