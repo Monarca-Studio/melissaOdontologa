@@ -82,15 +82,15 @@ const modules = [
     {modules.map(({ number, title, description }, index) => (
       <details class="group py-6">
         <summary class="flex items-center justify-between cursor-pointer">
-          <div class="flex items-center">
-            <div class="bg-grey-200 text-gold font-bold text-base w-12 h-12 rounded-full flex items-center justify-center mr-4">
+          <div class="flex items-center space-x-4">
+            <div class="bg-gray-200 text-gold font-bold text-base w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
               {number}
             </div>
-            <h3 class="text-navy hover:text-gold  font-semibold text-base w-full">
+            <h3 class="text-navy hover:text-gold font-semibold text-base w-full break-words">
               {title}
             </h3>
           </div>
-          <div class="flex items-center justify-center w-12 h-12">
+          <div class="flex items-center justify-center w-12 h-12 flex-shrink-0">
             <svg class="w-6 h-6 text-gray-500 group-open:rotate-180 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
