@@ -24,6 +24,7 @@ module.exports = {
       },
       borderColor: {
         default: "var(--color-border)",
+        gold: "var(--color-gold)",
       },
     },
   },

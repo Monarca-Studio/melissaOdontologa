@@ -18,31 +18,37 @@ const paymentOptions: Array<{ icon: IconName; label: string }> = [
 
   <!-- Descripción -->
   <p class="text-lg font-semibold text-gray-100 mb-4 animate-fadeIn delay-200">
-    Obtén acceso inmediato al contenido de Carillas Personalizadas y destaca en el mercado.
+    Obtén acceso inmediato a este programa valorado en:
+    <br>
+    <span class="line-through">1097 USD</span>
+    <br>
+    Por solo:
   </p>
 
   <!-- Precio y opciones -->
-  <div class="bg-orange-400 text-3xl font-bold py-2 px-4 rounded-md mb-4 animate-fadeIn delay-400">
-    $297 USD o en 12 cuotas de $24.75 USD
+  <div class="bg-white text-gold text-3xl font-bold py-2 px-4 rounded-md mb-4 animate-fadeIn delay-400 border-2 border-gold">
+    $297 USD
   </div>
-  <p class="text-sm font-semibold text-gray-100 mb-2 animate-fadeIn delay-600">
-    Sin intereses en tu tarjeta de crédito.
-  </p>
 
   <!-- Botón de acción -->
-  <a href="https://pay.hotmart.com/A94698317I?off=gsjevx42" target="_blank" class="block mb-5 px-8 py-4 bg-gold text-black font-bold rounded-lg hover:bg-goldDark hover:text-white transition-all duration-300 transform hover:scale-105 animate-bounce">
+  <a href="https://pay.hotmart.com/A94698317I?off=gsjevx42" target="_blank" class="block mb-5 px-8 py-4 bg-gold text-white font-bold rounded-lg hover:bg-goldDark hover:text-white transition-all duration-300 transform hover:scale-105 animate-bounce">
     ¡Quiero tener acceso ahora!
   </a>
-  <p class="text-sm text-gray-400">
-    <em>Haz clic aquí para comprar con total seguridad</em>
+  <p class="text-sm text-qhite">
+    <a
+    href="https://pay.hotmart.com/A94698317I?off=gsjevx42"
+    target="_blank"
+    >
+    Haz clic aquí para comprar con total seguridad
+  </a>
   </p>
 
   <!-- Opciones de pago -->
   <div class="flex justify-center gap-5 mt-4">
     {paymentOptions.map(({ icon, label }) => (
-      <div class="text-center">
-        <Icon name={icon} class="w-8 h-8 text-white" />
-        <p class="text-xs text-gray-100 mt-1">{label}</p>
+      <div class="text-center justify-center items-center ">
+        <Icon name={icon} class="w-full h-8 text-white " />
+        <p class="text-xs text-gray-100 mt-1 ">{label}</p>
       </div>
     ))}
   </div>
