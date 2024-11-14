@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import logo_mo from "~/assets/logo_mo.png";
+import logo_mo from "~/assets/just_logo_mo.png";
+import logo_phrase from "~/assets/logo_2.png";
 import button1 from "~/assets/Boton-1.png";
 import button2 from "~/assets/Boton-2.png";
 import button3 from "~/assets/Boton-3.png";
@@ -33,36 +34,37 @@ import whatsapp_bg from "~/assets/grupal.jpeg";
     <meta name="twitter:description" content="Accede al curso Técnica MO o agenda una cita con la Dra. Melissa." />
     <meta name="twitter:image" content={image} />
   </head>
-  <body class="bg-[#102434] h-screen flex flex-col items-center justify-center text-white">
-    <section class="flex flex-col items-center justify-center min-h-screen bg-[#102434]">
-      <div class="text-center font-bold text-2xl text-">
-        <!-- <img src="/logo_mo.png" alt="Logo MO Cursos" class="w-32 md:w-64 mx-auto mb-8" /> -->
-         <h1>MELISSA</h1>
-         <h1>ODONTÓLOGA</h1>
+  <body class="bg-[#102434] h-screen flex flex-col items-center justify-center">
+    <section class="flex flex-col items-center justify-center min-h-screen bg-[#102434] text-white">
+      <div class="flex mb-10 w-full max-w-[700px] mx-auto justify-center">
+        <img src={logo_phrase.src} alt="melissa odontóloga logo" class="w-full max-w-[700px] md:max-w-[600px] lg:max-w-[550px] h-auto" />
       </div>
-    
-      <div class="flex flex-col items-center space-y-4 mt-8">
+      
+      <div class="flex flex-col items-center space-y-4 mb-4">
         <a 
           href={`${whatsappLink}?text=${cursoPresencialMessage}`} 
           target="_blank"
-          class="w-full max-w-sm mx-auto text-center rounded-lg text-lg md:text-xl hover:scale-105 transition-transform transform"
+          class="md:w-full w-10/12 max-w-sm mx-auto text-center rounded-lg text-lg md:text-xl hover:scale-105 transition-transform transform"
         >
           <img src={button1.src} alt="Ir al Curso Técnica MO Presencial" class="w-full h-auto" />
         </a>
-        <a href="/curso-tecnica-mo" class="w-full max-w-sm mx-auto text-center rounded-lg text-lg md:text-xl hover:scale-105 transition-transform transform">
+        <a 
+          href="/curso-tecnica-mo" 
+          class="md:w-full w-10/12 max-w-sm mx-auto text-center rounded-lg text-lg md:text-xl hover:scale-105 transition-transform transform"
+        >
           <img src={button2.src} alt="Ir al Curso Técnica MO Online" class="w-full h-auto" />
         </a>
         <a 
           href={`${whatsappLink}?text=${citaMessage}`}
           target="_blank" 
-          class="w-full max-w-sm mx-auto text-center rounded-lg text-lg md:text-xl hover:scale-105 transition-transform transform"
+          class="md:w-full w-10/12 max-w-sm mx-auto text-center rounded-lg text-lg md:text-xl hover:scale-105 transition-transform transform"
         >
           <img src={button3.src} alt="Ir a Agendar Cita" class="w-full h-auto" />
         </a>
       </div>
 
       <div class="text-center">
-        <img src="/logo_mo.png" alt="Logo MO Cursos" class="w-16 md:w-24 mx-auto mb-8" />
+        <img src={logo_mo.src} alt="Logo MO Cursos" class="w-32 md:w-48 mx-auto" />
       </div>
     </section>
   </body>
